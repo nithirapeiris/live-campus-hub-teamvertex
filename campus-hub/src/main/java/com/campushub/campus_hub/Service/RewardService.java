@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface RewardService {
     void createReward(RewardDTO reward);
-    void getRewardDetails(String reward_id);
+    RewardDTO getRewardDetails(String reward_id);
     List<RewardDTO> getAllRewards();
 }

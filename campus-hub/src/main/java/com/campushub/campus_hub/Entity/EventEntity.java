@@ -17,7 +17,7 @@ public class EventEntity {
     @Id
     private String event_id;
     private String event_title;
-    private LocalDateTime event_date;
+    private LocalDateTime event_date_time;
     private String location_id;
     private String club_id;
 }

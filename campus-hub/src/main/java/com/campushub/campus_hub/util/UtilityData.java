@@ -29,6 +29,7 @@ public class UtilityData {
     public static LocalDate generateTodayDate(){
         return LocalDate.now();
     }
+
     public static LocalDateTime generateTodayDateTime(){
         return LocalDateTime.now();
     }

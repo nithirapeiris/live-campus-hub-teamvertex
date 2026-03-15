@@ -125,4 +125,17 @@ public class EntityDTOConversion {
     public List<StudentDTO> toStudentDTOList(List<StudentEntity> students) {
         return modelMapper.map(students, new TypeToken<List<StudentDTO>>() {}.getType());
     }
+
+    //Students clubs
+    public StudentsClubDTO toStudentsClubDTO(StudentsClubEntity studentsClub) {
+        return modelMapper.map(studentsClub, StudentsClubDTO.class);
+    }
+
+    public StudentsClubEntity toStudentsClubEntity(StudentsClubDTO studentsClub) {
+        return modelMapper.map(studentsClub, StudentsClubEntity.class);
+    }
+
+    public List<StudentsClubDTO> toStudentsClubDTOList(List<StudentsClubEntity> studentsClubs) {
+        return modelMapper.map(studentsClubs, new TypeToken<List<StudentsClubDTO>>() {}.getType());
+    }
 }

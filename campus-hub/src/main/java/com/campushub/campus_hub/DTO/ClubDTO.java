@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ClubDTO {
     private String club_id;
+    private String student_id;
     private String club_Name;
     private Boolean status;
 }

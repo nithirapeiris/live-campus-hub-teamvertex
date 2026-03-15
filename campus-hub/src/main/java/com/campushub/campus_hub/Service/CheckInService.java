@@ -8,5 +8,6 @@ public interface CheckInService {
     void saveCheckIn(String studentId, String locationId);
     void validateStudent(String studentId);
     void validateLocation(String locationId);
+    List<String> getStudentAtLocation(String locationId);
     List<CheckInDTO> getAllCheckIns();
 }
