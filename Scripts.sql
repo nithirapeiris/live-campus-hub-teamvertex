@@ -137,9 +137,7 @@ CREATE TABLE `staff` (
   `first_name` varchar(20) NOT NULL,
   `last_name` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `is_admin` boolean NOT NULL,
-  
-  
+  `is_admin` boolean NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
