@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -23,5 +25,8 @@ public class StudentsClubEntity {
     @MapsId("clubId")
     @JoinColumn(name = "club_id")
     private ClubEntity club;
+
+    private LocalDate joined_date;
+    private Boolean active_status;
 
 }

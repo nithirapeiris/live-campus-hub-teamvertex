@@ -8,7 +8,7 @@ public interface ClubService {
     void saveClub(ClubDTO club);
     void updateClub(ClubDTO club);
     void deleteClub(ClubDTO club);
-    void updateClubStatus(String clubId, boolean status);
+    void updateClubStatus(String clubId, int status);
     List<ClubDTO> getAllClubs();
 
 

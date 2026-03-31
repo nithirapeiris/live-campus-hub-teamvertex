@@ -14,15 +14,15 @@ import java.sql.Timestamp;
 @Data
 @Entity
 
-@Table(name = "student")
+@Table(name = "students")
 public class StudentEntity {
     @Id
     private String student_id;
     private String student_pwd;
     private String first_name;
     private String last_name;
-    private int phone;
+    private String phone;
     private String email;
-    private Timestamp enrolled_Year;
+    private String enrolled_Year;
     private String department_id;
 }

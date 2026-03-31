@@ -8,7 +8,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-import java.time.LocalDateTime;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,6 +21,6 @@ import java.time.LocalDateTime;
 public class StudentRewardEntity  {
     @EmbeddedId
     private StudentRewardId id;
-    private LocalDateTime earned_date;
-    private int points;
+    private LocalDate earned_date;
+    private BigDecimal points;
 }

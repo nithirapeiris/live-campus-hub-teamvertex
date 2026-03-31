@@ -4,7 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,6 +13,6 @@ import java.time.LocalDateTime;
 public class StudentRewardDTO {
     private String student_id;
     private String reward_id;
-    private LocalDateTime earned_date;
-    private int points;
+    private LocalDate earned_date;
+    private BigDecimal points;
 }

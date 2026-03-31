@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,7 +18,8 @@ public class EventEntity {
     @Id
     private String event_id;
     private String event_title;
-    private LocalDateTime event_date_time;
+    private LocalDate event_date;
+    private LocalTime event_time;
     private String location_id;
     private String club_id;
 }

@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 
-@Table(name = "department")
+@Table(name = "departments")
 public class DepartmentEntity {
     @Id
     private String department_id;

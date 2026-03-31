@@ -34,7 +34,7 @@ public class ClubController {
     }
 
     @PatchMapping
-    public ResponseEntity<Void> updateClubStatus(@PathVariable String clubId, @RequestParam boolean status){
+    public ResponseEntity<Void> updateClubStatus(@PathVariable String clubId, @RequestParam int status){
         clubService.updateClubStatus(clubId, status);
         return ResponseEntity.status(HttpStatus.OK).build();
     }

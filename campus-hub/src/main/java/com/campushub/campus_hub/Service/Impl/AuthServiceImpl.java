@@ -1,4 +1,6 @@
 package com.campushub.campus_hub.Service.Impl;
 
-public class AuthServiceImpl {
+import com.campushub.campus_hub.Service.AuthService;
+
+public class AuthServiceImpl implements AuthService {
 }

@@ -17,4 +17,5 @@ public class StaffDTO {
     private String first_name;
     private String last_name;
     private String email;
+    private Boolean is_admin;
 }

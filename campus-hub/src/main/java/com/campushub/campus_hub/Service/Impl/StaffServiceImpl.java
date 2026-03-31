@@ -6,7 +6,6 @@ import com.campushub.campus_hub.Entity.StaffEntity;
 import com.campushub.campus_hub.Exceptions.StaffMemberNotFoundException;
 import com.campushub.campus_hub.Service.StaffService;
 import com.campushub.campus_hub.util.EntityDTOConversion;
-import com.campushub.campus_hub.util.UtilityData;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,6 +21,7 @@ public class StaffServiceImpl implements StaffService {
     private final EntityDTOConversion entityDTOConversion;
     @Override
     public void saveStaffMember(StaffDTO staffMember) {
+        staffMember.setIs_admin(true);
         staffDao.save(entityDTOConversion.toStaffEntity(staffMember));
 
     }
@@ -37,6 +37,7 @@ public class StaffServiceImpl implements StaffService {
         staff.get().setFirst_name(staffMember.getFirst_name());
         staff.get().setLast_name(staffMember.getLast_name());
         staff.get().setEmail(staffMember.getEmail());
+        staff.get().setIs_admin(true);
 
     }
 

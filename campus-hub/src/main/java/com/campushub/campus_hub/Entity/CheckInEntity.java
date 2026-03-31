@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 
-@Table(name = "check_In")
+@Table(name = "check_in")
 public class CheckInEntity {
     @Id
     private String checkin_id;

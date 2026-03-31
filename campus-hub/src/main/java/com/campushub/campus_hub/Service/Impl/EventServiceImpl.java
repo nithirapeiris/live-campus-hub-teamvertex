@@ -11,6 +11,9 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+import java.time.LocalTime;
+import java.time.ZoneOffset;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,7 +27,8 @@ public class EventServiceImpl implements EventService {
     @Override
     public void saveEvent(EventDTO event) {
         event.setEvent_id(UtilityData.generateEvent_id());
-        event.setEvent_date_time(UtilityData.generateTodayDateTime());
+        event.setEvent_date(UtilityData.generateTodayDate());
+        event.setEvent_time(LocalTime.now(ZoneOffset.UTC));
 
         eventDao.save(entityDTOConversion.toEventEntity(event));
 
@@ -37,7 +41,8 @@ public class EventServiceImpl implements EventService {
             throw new EventNotFoundException("The event not found");
         }
         existingEvent.get().setEvent_title(event.getEvent_title());
-        existingEvent.get().setEvent_date_time(UtilityData.generateTodayDateTime());
+        existingEvent.get().setEvent_date(UtilityData.generateTodayDate());
+        existingEvent.get().setEvent_time(LocalTime.now(ZoneOffset.UTC));
         existingEvent.get().setLocation_id(event.getLocation_id());
         existingEvent.get().setClub_id(event.getClub_id());
 

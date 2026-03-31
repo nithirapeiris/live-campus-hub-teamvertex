@@ -21,5 +21,5 @@ public class ClubEntity {
 
     @Column(name= "club_name")
     private String clubName;
-    private Boolean status;
+    private int status;
 }

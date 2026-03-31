@@ -14,8 +14,8 @@ public class StudentDTO {
     private String student_pwd;
     private String first_name;
     private String last_name;
-    private int phone;
+    private String phone;
     private String email;
-    private Timestamp enrolled_Year;
+    private String enrolled_Year;
     private String department_id;
 }

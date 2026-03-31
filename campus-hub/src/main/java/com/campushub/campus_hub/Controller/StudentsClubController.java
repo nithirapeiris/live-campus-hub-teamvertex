@@ -42,4 +42,15 @@ public class StudentsClubController {
         studentsClubService.deleteStudentsClub(studentsClubDTO);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+    @PostMapping("/join")
+    public ResponseEntity<StudentsClubDTO> join(@RequestBody StudentsClubDTO request) {
+        return ResponseEntity.ok(studentsClubService.joinClub(request));
+    }
+
+    @PatchMapping("/{id}/deactivate")
+    public ResponseEntity<Void> deactivate(@PathVariable String  student_id, String club_id) {
+        studentsClubService.deactivateMembership(student_id, club_id);
+        return ResponseEntity.noContent().build();
+    }
 }

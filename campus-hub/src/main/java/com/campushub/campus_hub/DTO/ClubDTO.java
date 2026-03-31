@@ -11,5 +11,5 @@ public class ClubDTO {
     private String club_id;
     private String student_id;
     private String ClubName;
-    private Boolean status;
+    private int status;
 }

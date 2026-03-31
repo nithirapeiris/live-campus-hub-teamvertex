@@ -57,7 +57,7 @@ public class ClubServiceImpl implements ClubService {
     }
 
     @Override
-    public void updateClubStatus(String clubId, boolean status) {
+    public void updateClubStatus(String clubId, int status) {
         Optional<ClubEntity> foundClub = clubDao.findById(clubId);
         if(!foundClub.isPresent()){
             throw new ClubNotFoundException("Club not found with the ID: " + clubId);
