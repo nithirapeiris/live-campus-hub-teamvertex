@@ -17,7 +17,7 @@ import java.util.List;
 public class StudentsClubController {
     private final StudentsClubService studentsClubService;
 
-    @PostMapping("/join")
+    @PostMapping("/join-auth")
     public ResponseEntity<Void> joinClub(@RequestBody StudentsClubDTO studentsClubDTO, Authentication authentication){
         studentsClubDTO.setStudent_id(authentication.getName());
         studentsClubService.saveStudentsClub((StudentsClubDTO) studentsClubDTO);

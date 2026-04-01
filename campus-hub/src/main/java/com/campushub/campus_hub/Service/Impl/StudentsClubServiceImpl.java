@@ -51,18 +51,12 @@ public class StudentsClubServiceImpl implements StudentsClubService {
 
     @Override
     public StudentsClubDTO joinClub(StudentsClubDTO studentsClub) {
-        StudentsClubDTO sClubs = new StudentsClubDTO();
-        sClubs.setStudent_id(studentsClub.getStudent_id());
-        sClubs.setClub_id(studentsClub.getClub_id());
-
+        StudentsClubId id = new StudentsClubId(studentsClub.getStudent_id(), studentsClub.getClub_id());
         StudentsClubEntity registration = new StudentsClubEntity();
-        registration.setId(new StudentsClubId());
-
+        registration.setId(id);
         registration.setJoined_date(LocalDate.now());
         registration.setActive_status(true);
-
         StudentsClubEntity savedEntry = studentsClubDao.save(registration);
-
         return mapToResponse(savedEntry);
     }
 
