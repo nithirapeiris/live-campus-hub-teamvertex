@@ -1,8 +1,6 @@
 package com.campushub.campus_hub.Entity;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +19,17 @@ import java.time.LocalDate;
 public class StudentRewardEntity  {
     @EmbeddedId
     private StudentRewardId id;
+
+    @ManyToOne
+    @MapsId("studentId")
+    @JoinColumn(name = "student_id")
+    private StudentEntity student;
+
+    @ManyToOne
+    @MapsId("rewardId")
+    @JoinColumn(name = "reward_id")
+    private RewardEntity reward;
+
     private LocalDate earned_date;
     private BigDecimal points;
 }
