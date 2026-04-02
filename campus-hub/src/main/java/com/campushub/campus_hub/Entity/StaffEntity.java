@@ -21,4 +21,5 @@ public class StaffEntity {
     private String last_name;
     private String email;
     private Boolean is_admin;
+    private String profileImageUrl;
 }

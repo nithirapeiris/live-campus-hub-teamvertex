@@ -24,4 +24,5 @@ public class StudentEntity {
     private String email;
     private String enrolled_Year;
     private String department_id;
+    private String profileImageUrl;
 }

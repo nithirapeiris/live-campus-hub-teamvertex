@@ -6,7 +6,9 @@ import com.campushub.campus_hub.Service.StaffService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -43,6 +45,15 @@ public class StaffController {
     @GetMapping
     public ResponseEntity<List<StaffDTO>> getAllStaff() {
         return ResponseEntity.ok(staffService.getAllStaffs());
+    }
+
+    @PostMapping("/profile/image")
+    public ResponseEntity<String> uploadProfileImage(@RequestParam("file") MultipartFile file,
+    Authentication authentication){
+        String staffId = authentication.getName();
+        String profileImageUrl = staffService.updateProfileImage(staffId, file);
+
+        return ResponseEntity.ok(profileImageUrl);
     }
 
 

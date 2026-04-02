@@ -9,6 +9,7 @@ import com.campushub.campus_hub.util.EntityDTOConversion;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,6 +20,8 @@ import java.util.Optional;
 public class StudentServiceImpl implements StudentService {
     private final StudentDao studentDao;
     private final EntityDTOConversion entityDTOConversion;
+    private final FileStorageService fileStorageService;
+
     @Override
     public void saveStudent(StudentDTO student) {
         studentDao.save(entityDTOConversion.toStudentEntity(student));
@@ -51,6 +54,18 @@ public class StudentServiceImpl implements StudentService {
         }
         studentDao.delete(foundStudent.get());
 
+    }
+
+    @Override
+    public String updateProfileImage(String studentId, MultipartFile file) {
+        StudentEntity studentEntity = studentDao.findById(studentId).
+                orElseThrow(() -> new StudentNotFoundException("Student not found with id: " + studentId));
+
+        String fileName = fileStorageService.saveProfileImage(file);
+
+        studentEntity.setProfileImageUrl(("/uploads/profiles/" + fileName));
+        studentDao.save(studentEntity);
+        return studentEntity.getProfileImageUrl();
     }
 
     @Override
